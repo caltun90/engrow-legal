@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Engrow — Yasal Bilgiler / Legal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAFAFE;
+    --surface: #FFFFFF;
+    --primary: #6C63FF;
+    --primary-light: #EDE9FF;
+    --text: #2D3436;
+    --text-muted: #6B6F75;
+    --border: #E8E8E8;
+    --radius: 16px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding: 40px 20px 80px;
+  }
+  .container { max-width: 760px; margin: 0 auto; }
+
+  .header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 32px;
+    border-bottom: 2px solid var(--border);
+  }
+  .logo {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 8px;
+    letter-spacing: -1px;
+  }
+  .tagline {
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .lang-switch {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  .lang-btn {
+    padding: 8px 20px;
+    border: 2px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-muted);
+    transition: all 0.15s;
+  }
+  .lang-btn.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+  }
+  .lang-btn:hover:not(.active) {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+
+  .doc-switch {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  .doc-btn {
+    padding: 10px 24px;
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    transition: all 0.15s;
+  }
+  .doc-btn.active {
+    background: var(--primary-light);
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+
+  .content {
+    background: var(--surface);
+    padding: 40px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+  }
+
+  .content h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+  .content .updated {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .content h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-top: 32px;
+    margin-bottom: 12px;
+  }
+  .content h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 8px;
+  }
+  .content p { margin-bottom: 14px; }
+  .content ul { margin-left: 24px; margin-bottom: 14px; }
+  .content li { margin-bottom: 6px; }
+  .content a { color: var(--primary); }
+  .content strong { font-weight: 700; }
+  .content hr {
+    margin: 32px 0;
+    border: none;
+    border-top: 1px solid var(--border);
+  }
+  .content em {
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+
+  .doc { display: none; }
+  .doc.active { display: block; }
+
+  .footer {
+    text-align: center;
+    margin-top: 40px;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+
+  @media (max-width: 600px) {
+    .content { padding: 24px; }
+    .content h1 { font-size: 24px; }
+    .logo { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="logo">Engrow</div>
+    <div class="tagline" data-tr="Yasal Bilgiler" data-en="Legal Information">Yasal Bilgiler</div>
+  </div>
+
+  <div class="lang-switch">
+    <button class="lang-btn active" data-lang="tr">Türkçe</button>
+    <button class="lang-btn" data-lang="en">English</button>
+  </div>
+
+  <div class="doc-switch">
+    <button class="doc-btn active" data-doc="privacy" data-tr="Gizlilik Politikası" data-en="Privacy Policy">Gizlilik Politikası</button>
+    <button class="doc-btn" data-doc="terms" data-tr="Kullanım Koşulları" data-en="Terms of Service">Kullanım Koşulları</button>
+  </div>
+
+  <div class="content">
+
+    <!-- ========================== PRIVACY TR ========================== -->
+    <div class="doc active" data-doc="privacy" data-lang="tr">
+      <h1>Gizlilik Politikası</h1>
+      <div class="updated"><strong>Son güncelleme:</strong> 25 Nisan 2026</div>
+
+      <p>Bu Gizlilik Politikası, Cem Altun ("biz", "bize") tarafından geliştirilen Engrow mobil uygulamasının ("Uygulama") nasıl çalıştığını ve hangi verileri işlediğini açıklar. Engrow'u kullanarak bu politikayı kabul etmiş olursunuz.</p>
+
+      <h2>1. Topladığımız bilgiler</h2>
+      <p>Engrow, kişisel bilgilerinizi sunucularımızda toplamaz veya saklamaz. Uygulama tamamen cihazınızda çalışır.</p>
+      <p><strong>Cihazınızda yerel olarak saklanan bilgiler:</strong></p>
+      <ul>
+        <li>Öğrenme ilerlemeniz (tamamlanan konular, test sonuçları, başarı yüzdeleri)</li>
+        <li>Kullanım istatistikleriniz (XP, streak, çözülen soru sayısı)</li>
+        <li>Uygulama tercihleriniz (dil, tema, bildirim ayarları)</li>
+      </ul>
+      <p>Bu bilgiler cihazınızı terk etmez. Uygulamayı sildiğinizde bu veriler de silinir.</p>
+
+      <h2>2. Üçüncü taraf hizmetler</h2>
+      <p>Engrow, aşağıdaki üçüncü taraf hizmetlerini kullanır:</p>
+      <p><strong>RevenueCat</strong> — Abonelik yönetimi için kullanılır. RevenueCat, anonim bir kullanıcı kimliği oluşturur ve abonelik durumunuzu yönetir. RevenueCat'in gizlilik politikasını <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">https://www.revenuecat.com/privacy</a> adresinden inceleyebilirsiniz.</p>
+      <p><strong>Apple App Store</strong> — Tüm ödemeler Apple App Store üzerinden gerçekleşir. Ödeme bilgileriniz bize iletilmez. Apple'ın gizlilik politikası: <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">https://www.apple.com/legal/privacy/</a></p>
+
+      <h2>3. Çocukların gizliliği</h2>
+      <p>Engrow 13 yaşın altındaki çocuklardan bilerek veri toplamaz. Eğer 13 yaşın altındaysanız, lütfen bu uygulamayı kullanmayın. Eğer 13 yaşın altındaki bir çocuğa ait veri topladığımızı fark edersek, bu veriyi derhal sileriz.</p>
+
+      <h2>4. Veri güvenliği</h2>
+      <p>Verileriniz cihazınızda yerel olarak saklandığından, güvenliği büyük ölçüde cihazınızın kendi güvenlik özelliklerine bağlıdır (parola, Face ID, Touch ID gibi). Cihaz seviyesi güvenliği etkin tutmanızı öneririz.</p>
+
+      <h2>5. Haklarınız</h2>
+      <p>Yerel olarak saklanan verileriniz üzerinde tam kontrole sahipsiniz:</p>
+      <ul>
+        <li><strong>Görüntüleme:</strong> Uygulama içinden tüm ilerleme verilerinize erişebilirsiniz</li>
+        <li><strong>Silme:</strong> Uygulamayı silerek tüm verileri kalıcı olarak silebilirsiniz</li>
+        <li><strong>Sıfırlama:</strong> Ayarlar bölümünden ilerlemenizi sıfırlayabilirsiniz</li>
+      </ul>
+      <p>Abonelik bilgileriniz Apple ID hesabınız üzerinden yönetilir.</p>
+
+      <h2>6. Bu politikadaki değişiklikler</h2>
+      <p>Bu Gizlilik Politikasını zaman zaman güncelleyebiliriz. Önemli değişiklikler olduğunda uygulamada bildirim yapacağız. "Son güncelleme" tarihini kontrol ederek güncellemeleri takip edebilirsiniz.</p>
+
+      <h2>7. İletişim</h2>
+      <p>Bu Gizlilik Politikası ile ilgili sorularınız için bize ulaşın:</p>
+      <p><strong>Email:</strong> engrowapp@gmail.com<br>
+      <strong>Geliştirici:</strong> Cem Altun</p>
+
+      <hr>
+      <em>Bu Gizlilik Politikası Türkçe ve İngilizce olarak yayınlanmıştır. Yorumlar arasında uyuşmazlık olması durumunda Türkçe metin esas alınır.</em>
+    </div>
+
+    <!-- ========================== PRIVACY EN ========================== -->
+    <div class="doc" data-doc="privacy" data-lang="en">
+      <h1>Privacy Policy</h1>
+      <div class="updated"><strong>Last updated:</strong> April 25, 2026</div>
+
+      <p>This Privacy Policy explains how the Engrow mobile application ("App"), developed by Cem Altun ("we", "us"), operates and what data it processes. By using Engrow, you agree to this policy.</p>
+
+      <h2>1. Information we collect</h2>
+      <p>Engrow does not collect or store your personal information on our servers. The App runs entirely on your device.</p>
+      <p><strong>Information stored locally on your device:</strong></p>
+      <ul>
+        <li>Your learning progress (completed topics, quiz results, success percentages)</li>
+        <li>Your usage statistics (XP, streak, number of questions answered)</li>
+        <li>Your app preferences (language, theme, notification settings)</li>
+      </ul>
+      <p>This information never leaves your device. When you delete the App, this data is also deleted.</p>
+
+      <h2>2. Third-party services</h2>
+      <p>Engrow uses the following third-party services:</p>
+      <p><strong>RevenueCat</strong> — Used for subscription management. RevenueCat creates an anonymous user identifier and manages your subscription status. You can review RevenueCat's privacy policy at <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">https://www.revenuecat.com/privacy</a>.</p>
+      <p><strong>Apple App Store</strong> — All payments are processed through the Apple App Store. Your payment information is not transmitted to us. Apple's privacy policy: <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">https://www.apple.com/legal/privacy/</a></p>
+
+      <h2>3. Children's privacy</h2>
+      <p>Engrow does not knowingly collect data from children under 13. If you are under 13, please do not use this App. If we discover that we have collected data from a child under 13, we will delete it immediately.</p>
+
+      <h2>4. Data security</h2>
+      <p>Since your data is stored locally on your device, its security largely depends on your device's own security features (password, Face ID, Touch ID, etc.). We recommend keeping device-level security enabled.</p>
+
+      <h2>5. Your rights</h2>
+      <p>You have full control over your locally stored data:</p>
+      <ul>
+        <li><strong>View:</strong> Access all your progress data within the App</li>
+        <li><strong>Delete:</strong> Permanently delete all data by uninstalling the App</li>
+        <li><strong>Reset:</strong> Reset your progress through the Settings section</li>
+      </ul>
+      <p>Your subscription information is managed through your Apple ID account.</p>
+
+      <h2>6. Changes to this policy</h2>
+      <p>We may update this Privacy Policy from time to time. When significant changes occur, we will notify you in the App. You can track updates by checking the "Last updated" date.</p>
+
+      <h2>7. Contact</h2>
+      <p>For questions regarding this Privacy Policy, please contact us:</p>
+      <p><strong>Email:</strong> engrowapp@gmail.com<br>
+      <strong>Developer:</strong> Cem Altun</p>
+
+      <hr>
+      <em>This Privacy Policy is published in both Turkish and English. In case of any conflict between interpretations, the Turkish text shall prevail.</em>
+    </div>
+
+    <!-- ========================== TERMS TR ========================== -->
+    <div class="doc" data-doc="terms" data-lang="tr">
+      <h1>Kullanım Koşulları</h1>
+      <div class="updated"><strong>Son güncelleme:</strong> 25 Nisan 2026</div>
+
+      <p>Bu Kullanım Koşulları, Cem Altun ("biz", "bize") tarafından sunulan Engrow mobil uygulamasının ("Uygulama") kullanımını düzenler. Engrow'u indirerek veya kullanarak bu koşulları kabul etmiş olursunuz.</p>
+
+      <h2>1. Hizmet açıklaması</h2>
+      <p>Engrow, A1'den C2'ye CEFR seviyelerinde İngilizce gramer öğretimi sunan bir mobil uygulamadır. Konu anlatımları, alıştırmalar, testler ve final sınavları içerir.</p>
+
+      <h2>2. Hesap ve kayıt</h2>
+      <p>Engrow'u kullanmak için hesap oluşturmanıza gerek yoktur. Tüm veriler cihazınızda yerel olarak saklanır.</p>
+
+      <h2>3. Abonelik ve ödemeler</h2>
+      <h3>3.1 Ücretsiz içerik</h3>
+      <p>A1 ve A2 seviyelerindeki tüm konular ücretsizdir.</p>
+
+      <h3>3.2 Engrow Pro abonelikleri</h3>
+      <p>B1, B2, C1 ve C2 seviyelerine, final sınavlarına ve diğer premium özelliklere erişim için Engrow Pro aboneliği gerekir.</p>
+      <p><strong>Sunulan paketler:</strong></p>
+      <ul>
+        <li>Aylık abonelik</li>
+        <li>Yıllık abonelik</li>
+        <li>Ömür boyu erişim (tek seferlik ödeme)</li>
+      </ul>
+
+      <h3>3.3 Otomatik yenileme</h3>
+      <ul>
+        <li>Abonelikler, dönem sonundan en az 24 saat önce iptal edilmediği takdirde otomatik olarak yenilenir</li>
+        <li>Yenileme ücreti, mevcut dönemin bitiminden 24 saat önce Apple ID hesabınızdan tahsil edilir</li>
+        <li>Otomatik yenilemeyi istediğiniz zaman Apple ID hesap ayarlarınızdan kapatabilirsiniz</li>
+      </ul>
+
+      <h3>3.4 İptal</h3>
+      <p>Aboneliğinizi cihazınızdaki <strong>Ayarlar &gt; [Adınız] &gt; Abonelikler</strong> menüsünden istediğiniz zaman iptal edebilirsiniz. İptal işlemi mevcut dönem sonunda devreye girer; mevcut dönem boyunca erişiminiz devam eder.</p>
+
+      <h3>3.5 İade</h3>
+      <p>Apple App Store üzerinden yapılan satın almaların iadeleri Apple tarafından yönetilir. İade talepleriniz için Apple'a başvurabilirsiniz: <a href="https://support.apple.com/tr-tr/HT204084" target="_blank" rel="noopener">https://support.apple.com/tr-tr/HT204084</a></p>
+
+      <h2>4. Kabul edilebilir kullanım</h2>
+      <p>Engrow'u şu şekillerde kullanmamayı kabul edersiniz:</p>
+      <ul>
+        <li>Yasalara aykırı amaçlarla</li>
+        <li>Uygulamanın kodunu tersine mühendislik yaparak veya kopyalayarak</li>
+        <li>Uygulamayı veya içeriğini izinsiz çoğaltarak veya yeniden dağıtarak</li>
+        <li>Apple'ın Kullanım Koşullarını ihlal edecek şekilde</li>
+      </ul>
+
+      <h2>5. Fikri mülkiyet</h2>
+      <p>Uygulamadaki tüm içerikler (gramer açıklamaları, sorular, görsel öğeler, maskot, tasarım) Cem Altun'a aittir. İzinsiz kullanım, kopyalama veya dağıtım yasaktır.</p>
+
+      <h2>6. Sorumluluğun sınırlandırılması</h2>
+      <p>Engrow eğitim amaçlı bir uygulamadır. İçeriklerin doğruluğu için elimizden geleni yapsak da:</p>
+      <ul>
+        <li>İçerikler "olduğu gibi" sunulmaktadır</li>
+        <li>Sınav başarısı veya dil yeterlilik garantisi vermiyoruz</li>
+        <li>Uygulamadaki bilgilere dayanarak alacağınız kararlardan sorumlu değiliz</li>
+        <li>Yapay zeka destekli içeriklerde nadiren hatalar olabilir; bunları bildirmenizi öneririz</li>
+      </ul>
+      <p>Yasaların izin verdiği azami ölçüde, dolaylı, arızi veya sonuçsal zararlardan sorumlu değiliz.</p>
+
+      <h2>7. Hizmetin değiştirilmesi</h2>
+      <p>Uygulamayı, özelliklerini veya içeriğini önceden bildirimde bulunarak veya bulunmaksızın değiştirme, askıya alma veya sonlandırma hakkını saklı tutarız. Bu durumda aktif aboneliğiniz varsa, kalan dönem için iade talebinde bulunabilirsiniz.</p>
+
+      <h2>8. Bu koşullardaki değişiklikler</h2>
+      <p>Bu Kullanım Koşullarını zaman zaman güncelleyebiliriz. Önemli değişikliklerde uygulama içinden bildirim yapacağız. Güncellemeden sonra Engrow'u kullanmaya devam etmeniz, yeni koşulları kabul ettiğiniz anlamına gelir.</p>
+
+      <h2>9. Uygulanacak hukuk</h2>
+      <p>Bu Kullanım Koşulları Türkiye Cumhuriyeti yasalarına tabidir. Anlaşmazlık durumunda İstanbul Mahkemeleri yetkilidir.</p>
+
+      <h2>10. İletişim</h2>
+      <p>Kullanım Koşulları ile ilgili sorularınız için bize ulaşın:</p>
+      <p><strong>Email:</strong> engrowapp@gmail.com<br>
+      <strong>Geliştirici:</strong> Cem Altun</p>
+
+      <hr>
+      <em>Bu Kullanım Koşulları Türkçe ve İngilizce olarak yayınlanmıştır. Yorumlar arasında uyuşmazlık olması durumunda Türkçe metin esas alınır.</em>
+    </div>
+
+    <!-- ========================== TERMS EN ========================== -->
+    <div class="doc" data-doc="terms" data-lang="en">
+      <h1>Terms of Service</h1>
+      <div class="updated"><strong>Last updated:</strong> April 25, 2026</div>
+
+      <p>These Terms of Service govern the use of the Engrow mobile application ("App") provided by Cem Altun ("we", "us"). By downloading or using Engrow, you agree to these terms.</p>
+
+      <h2>1. Service description</h2>
+      <p>Engrow is a mobile application offering English grammar instruction at CEFR levels A1 through C2. It includes topic explanations, exercises, quizzes, and final exams.</p>
+
+      <h2>2. Account and registration</h2>
+      <p>You do not need to create an account to use Engrow. All data is stored locally on your device.</p>
+
+      <h2>3. Subscription and payments</h2>
+      <h3>3.1 Free content</h3>
+      <p>All topics at A1 and A2 levels are free.</p>
+
+      <h3>3.2 Engrow Pro subscriptions</h3>
+      <p>Access to B1, B2, C1, and C2 levels, final exams, and other premium features requires an Engrow Pro subscription.</p>
+      <p><strong>Available packages:</strong></p>
+      <ul>
+        <li>Monthly subscription</li>
+        <li>Annual subscription</li>
+        <li>Lifetime access (one-time payment)</li>
+      </ul>
+
+      <h3>3.3 Auto-renewal</h3>
+      <ul>
+        <li>Subscriptions automatically renew unless canceled at least 24 hours before the end of the current period</li>
+        <li>The renewal fee is charged to your Apple ID account 24 hours before the end of the current period</li>
+        <li>You can disable auto-renewal at any time through your Apple ID account settings</li>
+      </ul>
+
+      <h3>3.4 Cancellation</h3>
+      <p>You can cancel your subscription at any time through <strong>Settings &gt; [Your Name] &gt; Subscriptions</strong> on your device. Cancellation takes effect at the end of the current period; access continues throughout the current period.</p>
+
+      <h3>3.5 Refunds</h3>
+      <p>Refunds for purchases made through the Apple App Store are managed by Apple. For refund requests, please contact Apple: <a href="https://support.apple.com/HT204084" target="_blank" rel="noopener">https://support.apple.com/HT204084</a></p>
+
+      <h2>4. Acceptable use</h2>
+      <p>You agree not to use Engrow in the following ways:</p>
+      <ul>
+        <li>For unlawful purposes</li>
+        <li>By reverse engineering or copying the App's code</li>
+        <li>By unauthorized reproduction or redistribution of the App or its content</li>
+        <li>In ways that violate Apple's Terms of Service</li>
+      </ul>
+
+      <h2>5. Intellectual property</h2>
+      <p>All content in the App (grammar explanations, questions, visual elements, mascot, design) belongs to Cem Altun. Unauthorized use, copying, or distribution is prohibited.</p>
+
+      <h2>6. Limitation of liability</h2>
+      <p>Engrow is an educational application. While we strive for content accuracy:</p>
+      <ul>
+        <li>Content is provided "as is"</li>
+        <li>We do not guarantee exam success or language proficiency</li>
+        <li>We are not responsible for decisions made based on information in the App</li>
+        <li>AI-assisted content may rarely contain errors; we encourage you to report them</li>
+      </ul>
+      <p>To the maximum extent permitted by law, we are not liable for indirect, incidental, or consequential damages.</p>
+
+      <h2>7. Service modifications</h2>
+      <p>We reserve the right to modify, suspend, or terminate the App, its features, or content with or without prior notice. If you have an active subscription in such a case, you may request a refund for the remaining period.</p>
+
+      <h2>8. Changes to these terms</h2>
+      <p>We may update these Terms of Service from time to time. We will notify you of significant changes within the App. Continued use of Engrow after an update constitutes acceptance of the new terms.</p>
+
+      <h2>9. Governing law</h2>
+      <p>These Terms of Service are governed by the laws of the Republic of Türkiye. Any disputes shall be resolved in the courts of Istanbul.</p>
+
+      <h2>10. Contact</h2>
+      <p>For questions regarding these Terms of Service, please contact us:</p>
+      <p><strong>Email:</strong> engrowapp@gmail.com<br>
+      <strong>Developer:</strong> Cem Altun</p>
+
+      <hr>
+      <em>These Terms of Service are published in both Turkish and English. In case of any conflict between interpretations, the Turkish text shall prevail.</em>
+    </div>
+
+  </div>
+
+  <div class="footer" data-tr="© 2026 Cem Altun · Engrow" data-en="© 2026 Cem Altun · Engrow">
+    © 2026 Cem Altun · Engrow
+  </div>
+
+</div>
+
+<script>
+  let currentLang = 'tr';
+  let currentDoc = 'privacy';
+
+  function update() {
+    document.documentElement.lang = currentLang;
+
+    document.querySelectorAll('.doc').forEach(d => {
+      const matchesDoc = d.dataset.doc === currentDoc;
+      const matchesLang = d.dataset.lang === currentLang;
+      d.classList.toggle('active', matchesDoc && matchesLang);
+    });
+
+    document.querySelectorAll('.lang-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === currentLang);
+    });
+
+    document.querySelectorAll('.doc-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.doc === currentDoc);
+      const text = b.dataset[currentLang];
+      if (text) b.textContent = text;
+    });
+
+    document.querySelectorAll('[data-tr][data-en]').forEach(el => {
+      if (el.classList.contains('doc')) return;
+      const text = el.dataset[currentLang];
+      if (text) el.textContent = text;
+    });
+
+    const url = new URL(window.location);
+    url.searchParams.set('lang', currentLang);
+    url.searchParams.set('doc', currentDoc);
+    window.history.replaceState({}, '', url);
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.addEventListener('click', () => {
+      currentLang = b.dataset.lang;
+      update();
+    });
+  });
+
+  document.querySelectorAll('.doc-btn').forEach(b => {
+    b.addEventListener('click', () => {
+      currentDoc = b.dataset.doc;
+      update();
+    });
+  });
+
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('lang') === 'en' || params.get('lang') === 'tr') currentLang = params.get('lang');
+  if (params.get('doc') === 'terms' || params.get('doc') === 'privacy') currentDoc = params.get('doc');
+  update();
+</script>
+
+</body>
+</html>
